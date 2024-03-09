@@ -11,7 +11,7 @@
 .bat
 .tmux
 .zsh
-.zshen
+.zshenv
 .windows_terminal
 {{- end }}
 
