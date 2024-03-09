@@ -1,0 +1,31 @@
+#!/usr/bin/env zsh
+
+###############################
+# EXPORT ENVIRONMENT VARIABLE #
+###############################
+
+# editor
+export EDITOR="vim"
+export VISUAL="vim"
+
+# zsh
+export ZDOTDIR=$HOME/.zsh
+export HISTFILE="$ZDOTDIR/.history"    # History filepath
+export HISTSIZE=10000                   # Maximum events for internal history
+export SAVEHIST=10000                   # Maximum events in history file
+
+# bat
+export BAT_CONFIG_PATH=$HOME/.bat/bat.conf # Bat Config Path location
+export BAT_CONFIG_DIR="$HOME/.bat" # Bat Config Directory
+
+# zoxide
+export _ZO_ECHO='1' # Zodixe will print the matched directory before navigating to it
+
+# starship
+export STARSHIP_CONFIG="$HOME/.starship/starship.toml"
+
+# zsh-autosuggestions
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# less
+export LESSHISTFILE="$HOME"/.cache/less/history

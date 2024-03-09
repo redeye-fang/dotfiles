@@ -1,0 +1,126 @@
+# +---------+
+# | HISTORY |
+# +---------+
+
+setopt APPEND_HISTORY # Append to history file instead of replacing when using multiple zsh sessions
+setopt INC_APPEND_HISTORY # Append the command without waiting for shell exit
+setopt HIST_FIND_NO_DUPS # Do not display a previously found event
+setopt HIST_IGNORE_DUPS # Do not record an event that was just recorded again
+setopt HIST_IGNORE_ALL_DUPS # Delete an old recorded event if a new event is a duplicate
+setopt HIST_IGNORE_SPACE # Do not record an event starting with a space 
+setopt HIST_SAVE_NO_DUPS # Do not write a duplicate event to the history file.
+setopt SHARE_HISTORY # See previous commands that has been entered using different terminals
+
+# +---------------+
+# | EXTRA OPTIONS |
+# +---------------+
+
+setopt nomatch # prints an error, when no matches found for a pattern 
+setopt notify # Reports the status of background jobs immediately
+unsetopt beep # Removes the annoying sound 
+
+# +------+
+# | PATH |
+# +------+
+
+typeset -U path
+path=(~/.local/bin $path)
+
+# +---------+
+# | ALIASES |
+# +---------+
+
+source $ZDOTDIR/.zsh-aliases
+
+# +-----------+
+# | FUNCTIONS |
+# +-----------+
+
+source $ZDOTDIR/.zsh-functions
+
+# +-----------+
+# | VI KEYMAP |
+# +-----------+
+
+# Vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Change Cursor Plugin
+source $ZDOTDIR/vim-cursor-mode.zsh
+
+# Restore default behaviour overwritten due to vi mode
+bindkey ^R history-incremental-search-backward 
+bindkey ^S history-incremental-search-forward
+
+# when in NORMAL mode, hit v to directly edit the command in the default editor
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+# +-------------+
+# | COMPLETIONS |
+# +-------------+
+
+#autoload -Uz compinit
+#compinit
+#zstyle ':completion:*' menu select # completion options for menu and select
+#zmodload zsh/complist
+#_comp_options+=(globdots) # auto-complete for hidden files
+typeset -U fpath
+fpath=($ZDOTDIR/zsh-custom-completions/ $fpath)
+source $ZDOTDIR/completion.zsh
+
+# +----------+
+# | BINDINGS |
+# +----------+
+
+bindkey '^P' up-history # Move to the previous event in the history list
+bindkey '^N' down-history # Move to the new event in the history list
+bindkey -r '^l' # Remove clear-screen binding (ctrl+l) cuz used by tmux (switch pane)
+# Re-binding ctrl+w to move to the begining of the next word
+#bindkey -r '^w'
+#bindkey '^w' vi-forward-word
+# Re-binding alt+b to move to the begining of the previous word
+#bindkey -r '^b'
+#bindkey '^[b' backward-word
+#bindkey "^H" backward-delete-word
+
+## Key Strok variables
+key[Control-Left]="${terminfo[kLFT5]}"
+key[Control-Right]="${terminfo[kRIT5]}"
+
+## Key Stroke Actions
+#[[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word # move to the beginning of the previous word
+#[[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word # move to the beginning of the next word
+
+# +---------------------+
+# | ZSH-AUTOSUGGESTIONS |
+# +---------------------+
+
+source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# +-------------+
+# | SUDO PLUGIN |
+# +-------------+
+
+source $ZDOTDIR/sudo-plugin.zsh
+
+# +-----------------+
+# | STARSHIP PROMPT |
+# +-----------------+
+
+eval "$(starship init zsh)"
+
+# +--------+
+# | ZOXIDE |
+# +--------+
+
+eval "$(zoxide init --cmd cd zsh)"
+
+# +---------------------+
+# | SYNTAX HIGHLIGHTING |
+# +---------------------+
+
+source $ZDOTDIR/zsh-syntax-highlighting/catppuccin_macchiato-zsh-syntax-highlighting.zsh
+source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,0 +1,22 @@
+# Aliases
+## enable color support of ls
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    # alias dir='dir --color=auto'
+    # alias vdir='vdir --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+## eza
+alias ls='eza -xF always' # Classic Listing using Grid format
+alias ll='eza -lhF always --total-size --smart-group' # List in Long List format (Does'nt Include Hidden)
+alias la='eza -alhF always --total-size --smart-group' # List in Long List format (Include Hidden)
+alias lt='eza -aThF always' # List in Tree format
+
+alias update="sudo apt update && sudo apt upgrade -y" # makes updates simple
+alias cat='bat' # change cat -> bat
+
+alias tmux='tmux -f ~/.tmux/.tmux.conf'

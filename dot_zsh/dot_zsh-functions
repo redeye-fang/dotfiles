@@ -1,0 +1,7 @@
+## Credits to Shreedhar Hegde aka Mavenor
+lu () {
+    # Tool to display FS usage of directories
+    # Sort-of wrapper for `du' but not really
+    # Only shows dirs that range into MiB and above (regex portion)
+    sudo du --si -d1 "$1" 2>/dev/null | sort -hk 1,1.4 | /usr/bin/egrep --color=always -e '^[[:digit:]MGT.[:space:]]{4}[[:space:]]' | less -r
+}

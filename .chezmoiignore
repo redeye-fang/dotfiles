@@ -6,3 +6,13 @@
 .powershell
 .windows_terminal
 {{- end }}
+
+{{- if ne .chezmoi.os "linux" }}
+.bat
+.tmux
+.zsh
+.zshen
+.windows_terminal
+{{- end }}
+
+
