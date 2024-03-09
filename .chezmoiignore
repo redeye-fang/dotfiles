@@ -1,6 +1,8 @@
 ## Windows Specific
+
 ## If the os is not windows ignore these
+
 {{- if ne .chezmoi.os "windows" }}
 .powershell
-.windows terminal
+.windows_terminal
 {{- end }}
