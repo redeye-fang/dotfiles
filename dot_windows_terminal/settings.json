@@ -51,7 +51,7 @@
         {
             "antialiasingMode": "cleartype",
             "closeOnExit": "graceful",
-            "colorScheme": "One Half Dark",
+            "colorScheme": "Catppuccin Macchiato",
             "cursorShape": "emptyBox",
             "experimental.retroTerminalEffect": false,
             "font": 
@@ -83,12 +83,12 @@
                 "name": "Command Prompt"
             },
             {
-                "commandline": "ssh redEye@serverjunk",
+                "commandline": "ssh redEye@hestia",
                 "guid": "{d1ac3cdd-67e3-4636-a162-5854bc362110}",
                 "hidden": false,
-                "icon": "%UserProfile%\\Images\\Icons\\serverjunk.ico",
-                "name": "ssh serverjunk",
-                "tabTitle": "ServerJunk"
+                "icon": "%UserProfile%\\Images\\Icons\\hestia.ico",
+                "name": "Hestia",
+                "tabTitle": "Hestia"
             },
             {
                 "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
@@ -127,6 +127,33 @@
     },
     "schemes": 
     [
+        {
+            "name": "Catppuccin Macchiato",
+          
+            "cursorColor": "#F4DBD6",
+            "selectionBackground": "#5B6078",
+          
+            "background": "#24273A",
+            "foreground": "#CAD3F5",
+          
+            "black": "#494D64",
+            "red": "#ED8796",
+            "green": "#A6DA95",
+            "yellow": "#EED49F",
+            "blue": "#8AADF4",
+            "purple": "#F5BDE6",
+            "cyan": "#8BD5CA",
+            "white": "#B8C0E0",
+          
+            "brightBlack": "#5B6078",
+            "brightRed": "#ED8796",
+            "brightGreen": "#A6DA95",
+            "brightYellow": "#EED49F",
+            "brightBlue": "#8AADF4",
+            "brightPurple": "#F5BDE6",
+            "brightCyan": "#8BD5CA",
+            "brightWhite": "#A5ADCB"
+          },
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
@@ -360,6 +387,23 @@
     ],
     "tabWidthMode": "equal",
     "theme": "legacySystem",
-    "themes": [],
+    "themes": 
+    [
+        {
+            "name": "Catppuccin Macchiato",
+            "tab": {
+              "background": "#24273AFF",
+              "showCloseButton": "always",
+              "unfocusedBackground": null
+            },
+            "tabRow": {
+              "background": "#1E2030FF",
+              "unfocusedBackground": "#181926FF"
+            },
+            "window": {
+              "applicationTheme": "dark"
+            }
+          }
+    ],
     "useAcrylicInTabRow": true
 }
