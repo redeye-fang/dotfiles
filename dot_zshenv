@@ -4,6 +4,10 @@
 # EXPORT ENVIRONMENT VARIABLE #
 ###############################
 
+# path
+typeset -U path
+path=(/usr/bin ~/.local/bin $path)
+
 # editor
 export EDITOR="vim"
 export VISUAL="vim"
@@ -29,3 +33,7 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # less
 export LESSHISTFILE="$HOME"/.cache/less/history
+
+# docker
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+

@@ -19,13 +19,6 @@ setopt nomatch # prints an error, when no matches found for a pattern
 setopt notify # Reports the status of background jobs immediately
 unsetopt beep # Removes the annoying sound 
 
-# +------+
-# | PATH |
-# +------+
-
-typeset -U path
-path=(~/.local/bin $path)
-
 # +---------+
 # | ALIASES |
 # +---------+
