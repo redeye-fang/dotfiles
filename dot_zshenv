@@ -35,5 +35,6 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export LESSHISTFILE="$HOME"/.cache/less/history
 
 # docker
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
+# export DOCKER_HOST=unix:///run/user/1000/docker.sock # rootless
+# export DOCKER_HOST="unix:///var/run/docker.sock"  # rootful
 

@@ -10,13 +10,15 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-## eza
-alias ls='eza -xF always' # Classic Listing using Grid format
-alias ll='eza -lhF always --total-size --smart-group' # List in Long List format (Does'nt Include Hidden)
-alias la='eza -alhF always --total-size --smart-group' # List in Long List format (Include Hidden)
-alias lt='eza -aThF always' # List in Tree format
-
+alias sudo='sudo ' # Let sudo pass aliases
 alias update="sudo apt update && sudo apt upgrade -y" # makes updates simple
+alias lsblk="lsblk -o NAME,UUID,OWNER,FSTYPE,SIZE,FSSIZE,FSUSE%,MOUNTPOINTS" # Custom lsblk column format
+alias tmux='tmux -f ~/.tmux/.tmux.conf' # Tmux with diff conf file
+alias vim='nvim' # vim -> nvim
 alias cat='bat' # change cat -> bat
 
-alias tmux='tmux -f ~/.tmux/.tmux.conf'
+## eza
+alias ls='eza -xF always' # Classic Listing using Grid format
+alias ll='eza -lhF always --smart-group' # List in Long List format (Does'nt Include Hidden)
+alias la='eza -alhF always --smart-group' # List in Long List format (Include Hidden)
+alias lt='eza -aThF always' # List in Tree format
